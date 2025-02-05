@@ -1,5 +1,7 @@
 import hexagramsJson from "./hexagrams.json"
 
+const YAO_POSITIONS: YaoPosition[] = ["初", "二", "三", "四", "五", "上"]
+
 /**
  * Simulates a coin toss and returns the result.
  *
@@ -52,16 +54,18 @@ export function generateTossResult(): TossResult {
  * console.log(yao); // { type: '老陽', changesTo: '⚋' }
  * ```
  */
-export function generateYao(tossResult: TossResult): Yao {
+export function generateYao(tossResult: TossResult, index: number): Yao {
+  const position: YaoPosition = YAO_POSITIONS[index]
+
   switch (tossResult) {
     case "三正":
-      return { type: "老陽", changesTo: "⚋" }
+      return { type: "老陽", changesTo: "⚋", position }
     case "兩正一反":
-      return { type: "少陽" }
+      return { type: "少陽", position }
     case "兩反一正":
-      return { type: "少陰" }
+      return { type: "少陰", position }
     case "三反":
-      return { type: "老陰", changesTo: "⚊" }
+      return { type: "老陰", changesTo: "⚊", position }
     default:
       throw new Error("Invalid toss result")
   }

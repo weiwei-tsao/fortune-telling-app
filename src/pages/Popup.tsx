@@ -26,7 +26,7 @@ export default function Popup() {
       <div className="yaos-display">
         {yaos.map((yao, index) => (
           <div key={index} className="yao">
-            {yao.type}
+            {yao.position}爻：{yao.type}
             {yao.changesTo && (
               <span className="changes-to">→ {yao.changesTo}</span>
             )}

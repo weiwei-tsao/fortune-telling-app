@@ -18,7 +18,7 @@ export function useHexagram() {
     if (yaos.length >= 6) return
 
     const tossResult = generateTossResult()
-    const newYao = generateYao(tossResult)
+    const newYao = generateYao(tossResult, yaos.length)
     const newYaos = [...yaos, newYao]
     setYaos(newYaos)
 

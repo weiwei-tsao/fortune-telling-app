@@ -25,7 +25,7 @@ h1 {
 
 .yaos-display {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   gap: 8px;
   margin: 16px 0;
 }

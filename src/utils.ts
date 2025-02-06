@@ -1,6 +1,6 @@
 import hexagramsJson from "./hexagrams.json"
 
-const YAO_POSITIONS: YaoPosition[] = ["初", "二", "三", "四", "五", "上"]
+export const YAO_POSITIONS: YaoPosition[] = ["初", "二", "三", "四", "五", "上"]
 
 /**
  * Simulates a coin toss and returns the result.

@@ -1,6 +1,8 @@
 import { useHexagram } from "../hooks/useHexagram"
 import { CoinToss } from "../components/CoinToss/CoinToss"
 import { Hexagram } from "../components/Hexagram/Hexagram"
+import { YaoDisplay } from "../components/YaoDisplay/YaoDisplay"
+import { YAO_POSITIONS } from "../utils"
 import "./Popup.css"
 
 export default function Popup() {
@@ -24,14 +26,10 @@ export default function Popup() {
       />
 
       <div className="yaos-display">
-        {yaos.map((yao, index) => (
-          <div key={index} className="yao">
-            {yao.position}爻：{yao.type}
-            {yao.changesTo && (
-              <span className="changes-to">→ {yao.changesTo}</span>
-            )}
-          </div>
-        ))}
+        {YAO_POSITIONS.map((position) => {
+          const yao = yaos.find((y) => y.position === position)
+          return <YaoDisplay key={position} yao={yao} position={position} />
+        })}
       </div>
 
       {isComplete && (

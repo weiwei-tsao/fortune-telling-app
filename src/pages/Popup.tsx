@@ -68,17 +68,19 @@ export default function Popup() {
       </div>
 
       {isComplete && (
-        <div className="results">
-          {originalHexagram && (
-            <Hexagram hexagram={originalHexagram} title="本卦" />
-          )}
-          {changedHexagram && (
-            <Hexagram hexagram={changedHexagram} title="變卦" />
-          )}
+        <>
+          <div className="results">
+            {originalHexagram && (
+              <Hexagram hexagram={originalHexagram} title="本卦" />
+            )}
+            {changedHexagram && (
+              <Hexagram hexagram={changedHexagram} title="變卦" />
+            )}
+          </div>
           <button className="reset-button" onClick={reset}>
             重新開始
           </button>
-        </div>
+        </>
       )}
     </div>
   )

@@ -1,37 +1,36 @@
 .yao-container {
   display: flex;
   align-items: center;
-  margin: 10px 0;
   height: 30px;
 }
 
 .yao-position {
   width: 40px;
   text-align: right;
-  margin-right: 10px;
+  margin-right: 2px;
 }
 
 .yao-lines {
   display: flex;
   justify-content: space-between;
-  width: 100px;
+  width: 78px;
 }
 
 .yang-line {
   width: 100%;
-  height: 20px;
+  height: 14px;
   background-color: black;
 }
 
 .yin-line {
   width: 45%;
-  height: 20px;
+  height: 14px;
   background-color: black;
 }
 
 .changing .yang-line,
 .changing .yin-line {
-  animation: changeColor 3s ease-in-out;
+  animation: changeColor 1.5s forwards;
 }
 
 .changed .yang-line,
@@ -49,6 +48,6 @@
 }
 
 .empty {
-  height: 20px;
+  height: 14px;
   border: 1px dashed #ccc;
 }

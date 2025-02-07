@@ -26,7 +26,7 @@ h1 {
 .yaos-region {
   display: flex;
   flex-direction: row;
-  gap: 16px;
+  gap: 26px;
   justify-content: center;
   align-items: center;
   width: 100%; /* 添加寬度 100% */
@@ -52,7 +52,10 @@ h1 {
 }
 
 .results {
-  margin-top: 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: start;
 }
 
 .reset-button {

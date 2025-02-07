@@ -10,9 +10,9 @@ export const Hexagram = memo(({ hexagram, title }: Props) => {
   return (
     <div className="hexagram">
       <h3 className="hexagram-title">{title}</h3>
-      <div className="hexagram-name">{hexagram.name}</div>
+      <h4 className="hexagram-name">{hexagram.name}</h4>
       <div className="hexagram-description">
-        <h4>卦辭</h4>
+        <h5>卦辭</h5>
         {hexagram.description.yijing.map((text, index) => (
           <p key={index}>{text}</p>
         ))}

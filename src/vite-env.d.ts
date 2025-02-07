@@ -4,7 +4,7 @@ type YaoPosition = "初" | "二" | "三" | "四" | "五" | "上"
 
 type Yao = {
   position: YaoPosition
-  type: "少陽" | "少陰" | "老陽" | "老陰"
+  type: "少陽" | "少陰" | "老陽" | "老陰" | "陽" | "陰"
   changesTo?: "⚊" | "⚋" // 對於變爻，記錄變化後的屬性
 }
 

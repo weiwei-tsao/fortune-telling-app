@@ -30,6 +30,37 @@ export default function Popup() {
           const yao = yaos.find((y) => y.position === position)
           return <YaoDisplay key={position} yao={yao} position={position} />
         })}
+
+        {changedHexagram && (
+          <div className="yaos-display">
+            {YAO_POSITIONS.map((position) => {
+              const yao = yaos.find((y) => y.position === position)
+
+              switch (yao?.changesTo) {
+                case "⚊":
+                  return (
+                    <YaoDisplay
+                      key={position}
+                      yao={{ ...yao, type: "陽" }}
+                      position={position}
+                    />
+                  )
+                case "⚋":
+                  return (
+                    <YaoDisplay
+                      key={position}
+                      yao={{ ...yao, type: "陰" }}
+                      position={position}
+                    />
+                  )
+                default:
+                  return (
+                    <YaoDisplay key={position} yao={yao} position={position} />
+                  )
+              }
+            })}
+          </div>
+        )}
       </div>
 
       {isComplete && (

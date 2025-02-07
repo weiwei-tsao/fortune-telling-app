@@ -30,7 +30,7 @@ export function YaoDisplay({ yao, position }: YaoDisplayProps) {
     )
   }
 
-  const isYang = yao.type === "少陽" || yao.type === "老陽"
+  const isYang = yao.type.includes("陽") // yao.type === "少陽" || yao.type === "老陽"
   const shouldBeRed = isChanged && yao.changesTo
 
   return (

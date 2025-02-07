@@ -25,12 +25,16 @@ export default function Popup() {
         tossCount={yaos.length}
       />
 
-      <div className="yaos-display">
-        {YAO_POSITIONS.map((position) => {
-          const yao = yaos.find((y) => y.position === position)
-          return <YaoDisplay key={position} yao={yao} position={position} />
-        })}
+      <div className="yaos-region">
+        {/* 本卦 */}
+        <div className="yaos-display">
+          {YAO_POSITIONS.map((position) => {
+            const yao = yaos.find((y) => y.position === position)
+            return <YaoDisplay key={position} yao={yao} position={position} />
+          })}
+        </div>
 
+        {/* 變卦 */}
         {changedHexagram && (
           <div className="yaos-display">
             {YAO_POSITIONS.map((position) => {

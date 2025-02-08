@@ -4,6 +4,8 @@ import { Hexagram } from "../components/Hexagram/Hexagram"
 import { YaoDisplay } from "../components/YaoDisplay/YaoDisplay"
 import { YAO_POSITIONS } from "../utils"
 import "./Popup.css"
+import coinFront from "../assets/images/coin_front.png"
+import coinBack from "../assets/images/coin_back.png"
 
 export default function Popup() {
   const {
@@ -24,6 +26,11 @@ export default function Popup() {
         disabled={isComplete}
         tossCount={yaos.length}
       />
+
+      <div className="coin">
+        <div className="front"></div>
+        <div className="back"></div>
+      </div>
 
       <div className="yaos-region">
         {/* 本卦 */}

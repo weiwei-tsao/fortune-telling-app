@@ -6,6 +6,8 @@ import { YAO_POSITIONS } from "../utils"
 import "./Popup.css"
 import coinFront from "../assets/images/coin_front.png"
 import coinBack from "../assets/images/coin_back.png"
+import { useState } from "react"
+import { CoinAnimation } from "../components/CoinAnimation/CoinAnimation"
 
 export default function Popup() {
   const {
@@ -14,7 +16,9 @@ export default function Popup() {
     changedHexagram,
     performToss,
     reset,
-    isComplete
+    isComplete,
+    isAnimating,
+    coinResults
   } = useHexagram()
 
   return (
@@ -27,10 +31,7 @@ export default function Popup() {
         tossCount={yaos.length}
       />
 
-      <div className="coin">
-        <div className="front"></div>
-        <div className="back"></div>
-      </div>
+      <CoinAnimation isAnimating={isAnimating} results={coinResults} />
 
       <div className="yaos-region">
         {/* 本卦 */}

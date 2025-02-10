@@ -1,7 +1,12 @@
 import hexagramsJson from "./hexagrams.json"
 
 export const YAO_POSITIONS: YaoPosition[] = ["初", "二", "三", "四", "五", "上"]
-
+export const COIN_RESULTS: Record<TossResult, ("正" | "反")[]> = {
+  三正: ["正", "正", "正"],
+  兩正一反: ["正", "正", "反"],
+  兩反一正: ["反", "反", "正"],
+  三反: ["反", "反", "反"]
+}
 /**
  * Simulates a coin toss and returns the result.
  *

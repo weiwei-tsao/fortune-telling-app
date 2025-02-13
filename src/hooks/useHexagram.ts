@@ -30,24 +30,25 @@ export function useHexagram() {
     const tossResult = generateTossResult()
 
     // 設置硬幣結果
-    console.log("tossResult", tossResult)
     setCoinResults(COIN_RESULTS[tossResult])
 
     // 延遲生成卦象，等待動畫完成
     setTimeout(() => {
-      const newYao = generateYao(tossResult, yaos.length)
-      const newYaos = [...yaos, newYao]
-      setYaos(newYaos)
+      setTimeout(() => {
+        const newYao = generateYao(tossResult, yaos.length)
+        const newYaos = [...yaos, newYao]
+        setYaos(newYaos)
 
-      if (newYaos.length === 6) {
-        const originalCode = generateOriginalHexagramCode(newYaos)
-        const changedCode = generateChangedHexagramCode(newYaos)
+        if (newYaos.length === 6) {
+          const originalCode = generateOriginalHexagramCode(newYaos)
+          const changedCode = generateChangedHexagramCode(newYaos)
 
-        setOriginalHexagram(getHexagram(originalCode))
-        if (originalCode !== changedCode) {
-          setChangedHexagram(getHexagram(changedCode))
+          setOriginalHexagram(getHexagram(originalCode))
+          if (originalCode !== changedCode) {
+            setChangedHexagram(getHexagram(changedCode))
+          }
         }
-      }
+      }, 1000)
 
       setIsAnimating(false) // 動畫完成後重置狀態
     }, 3000)

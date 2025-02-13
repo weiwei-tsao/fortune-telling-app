@@ -9,8 +9,9 @@ type Props = {
 export const Hexagram = memo(({ hexagram, title }: Props) => {
   return (
     <div className="hexagram">
-      <h3 className="hexagram-title">{title}</h3>
-      <h4 className="hexagram-name">{hexagram.name}</h4>
+      <h3 className="hexagram-title">
+        {title}：{hexagram.name}
+      </h3>
       <div className="hexagram-description">
         <h5 className="hexagram-description-title">卦辭</h5>
         {hexagram.description.yijing.map((text, index) => (
